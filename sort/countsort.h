@@ -1,19 +1,23 @@
 ﻿#pragma once
 
-int getMax (int* arr, int n )
-{
-   int max = arr[0];
-   for(int i = 1; i < n; ++i)
-   {
-      if( arr[i] > max)
-      {
-        max = arr[i];
-      }
-   }
-   return max;
-}
+#include "basesort.h"
 
-void build_output(int* output, int* count, int max)
+class CountSort : public BaseSort
+{
+private:
+    const std::string name = "Count Sorting Algorithm";
+    
+	void build_output(int* output, int* count, int max);
+
+public:
+    void Sort (int* arr, int n);
+    std::string getNameSortingAlgorithm()
+    {
+       return name;
+	}		
+};
+
+void CountSort::build_output(int* output, int* count, int max)
 {
     for(int i = 0, j = 0; i < max + 1; ++i)
     {
@@ -24,7 +28,7 @@ void build_output(int* output, int* count, int max)
     }
 }
 
-void countSort(int* arr, int n)
+void CountSort::Sort(int* arr, int n)
 {
     int* output = new int[n];
     int max = getMax (arr, n);

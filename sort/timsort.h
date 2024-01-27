@@ -1,7 +1,24 @@
 ﻿#pragma once
 #include <algorithm>
 
-void merge(int* arr, int l, int m, int r)
+#include "basesort.h"
+
+class TimSort : public BaseSort
+{
+	private:
+	   const std::string name = "Tim Sorting Algorithm";
+	   void merge(int* arr, int l, int m, int r);
+	   void insertionSort(int* arr, int l, int r);
+	
+	public:
+	   void Sort(int* arr, int n);
+	   std::string getNameSortingAlgorithm()
+	   {
+	      return name;
+	   }
+};
+
+void TimSort::merge(int* arr, int l, int m, int r)
 {
    int nl = m - l + 1;
    int nr = r - m;
@@ -44,7 +61,7 @@ void merge(int* arr, int l, int m, int r)
    }
 }
 
-void insertionSort(int* arr, int l, int r) 
+void TimSort::insertionSort(int* arr, int l, int r) 
 {
     for (int i = l + 1; i <= r; i++) {
         int key = arr[i]; 
@@ -61,7 +78,7 @@ void insertionSort(int* arr, int l, int r)
    } 
 }
 
-void timSort(int* arr, int n)
+void TimSort::Sort(int* arr, int n)
 {
     const int RUN = 16;
     // сортируем отдельные подмассивы размера RUN

@@ -1,6 +1,24 @@
 ﻿#pragma once
 
-void merge(int* arr, int l, int m, int r)
+#include "basesort.h"
+
+class MergeSort : public BaseSort
+{
+   private:	
+      const std::string name = "Merge Sorting Algorithm";
+   
+      void Merge(int* arr, int l, int m, int r);
+      void MergingSort(int* a, int p, int r);
+   public:
+      void Sort(int* arr, int n);
+	  std::string getNameSortingAlgorithm()
+	  {
+	     return name;
+	  }
+};
+
+
+void MergeSort::Merge(int* arr, int l, int m, int r)
 {
    int nl = m - l + 1;
    int nr = r - m;
@@ -43,19 +61,19 @@ void merge(int* arr, int l, int m, int r)
    }
 }
 
-void mergeSort(int* a, int p, int r)
+void MergeSort::MergingSort(int* a, int p, int r)
 {
    if(p >= r)
    {
       return;
    }
    int q = (p + r - 1)/2;
-   mergeSort(a, p, q);
-   mergeSort(a, q + 1, r);
-   merge(a, p, q, r);
+   MergingSort(a, p, q);
+   MergingSort(a, q + 1, r);
+   Merge(a, p, q, r);
 }
 
-void mergeSort(int* a, int number)
+void MergeSort::Sort(int* a, int number)
 {
-   mergeSort(a, 0, number - 1);
+   MergingSort(a, 0, number - 1);
 }

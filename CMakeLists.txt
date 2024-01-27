@@ -2,12 +2,12 @@
 
 project(Module11)
 
-add_executable(files main.cpp )
+add_executable(sort main.cpp )
 
 include_directories(./sort ./files)
 
 set_target_properties(
-    files PROPERTIES
+    sort PROPERTIES
     CXX_STANDARD 11
     CXX_STANDARD_REQUIRED ON
 )	

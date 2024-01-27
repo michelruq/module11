@@ -1,6 +1,21 @@
 ﻿#pragma once
 
-void insertionSort(int* arr, int n) 
+#include "basesort.h"
+
+class InsertSort : public BaseSort
+{
+	private:
+	   const std::string name = "Insert Sorting Algorithm";
+	
+	public:
+	   void Sort(int* arr, int n);
+	   std::string getNameSortingAlgorithm()
+	   {
+	      return name;
+	   }
+};
+
+void InsertSort::Sort(int* arr, int n) 
 { 
    for (int i = 1; i < n; i++) {
        int key = arr[i]; 

@@ -1,13 +1,21 @@
 ﻿#pragma once
 
-void swap(int *a, int *b) // функция для смены местами двух значений
-{
-   int temp = *a;
-   *a = *b;
-   *b = temp;
-}
+#include "basesort.h"
 
-void selectionSort(int* arr, int n)
+class SelectSort : public BaseSort
+{
+	private:	
+        const std::string name = "Select Sorting Algorithm";
+		
+	public:	
+	    void Sort(int* arr, int n);
+		std::string getNameSortingAlgorithm()
+	    {
+	       return name;
+	    }
+};
+
+void SelectSort::Sort(int* arr, int n)
 {
     for(int j {0}; j < n; ++j)
     {
@@ -19,5 +27,4 @@ void selectionSort(int* arr, int n)
             }
         }
     }
-    
 }

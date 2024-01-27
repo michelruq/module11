@@ -1,18 +1,30 @@
 ﻿#pragma once
 
-void swap(int *a, int *b) // функция для смены местами двух значений
-{
-   int temp = *a;
-   *a = *b;
-   *b = temp;
-}
+#include "basesort.h"
 
-void bubbleSort(int* arr, int n)
+class BubbleSort : public BaseSort
 {
-    for (int i = 0; i < n-1; i++)
-        for (int j = 0; j < n-1; j++)
-            if(arr[j+1] < arr[j])
-            {
-               swap(&arr[j], &arr[j+1]); 
-            }
+	private:
+	    const std::string name = "Bubble Sorting Algorithm";
+	
+    public:
+	    void Sort(int* arr, int n);
+		std::string getNameSortingAlgorithm()
+	    {
+		   return name;
+	    }
+};
+
+void BubbleSort::Sort(int* arr, int n)
+{
+	for (int i = 0; i < n-1; i++)
+	{
+		for (int j = 0; j < n-1; j++)
+		{
+			if(arr[j+1] < arr[j])
+			{
+			   swap(&arr[j], &arr[j+1]); 
+			}
+		}
+	}
 }

@@ -1,13 +1,24 @@
 ﻿#pragma once
 
-void swap(int *a, int *b) 
-{
-  int t = *a;
-  *a = *b;
-  *b = t;
-}
+#include "basesort.h"
 
-int partition(int array[], int low, int high) {
+class QSort : public BaseSort
+{
+	private:
+	   const std::string name = "Q Sorting Algorithm";
+	   int partition(int array[], int low, int high);
+	   void quickSortInt(int array[], int low, int high);
+	
+	public:
+	   void Sort(int* arr, int n);
+	   std::string getNameSortingAlgorithm()
+	   {
+	      return name;
+	   }
+};
+
+int QSort::partition(int array[], int low, int high) 
+{
     
   // select the rightmost element as pivot
   int pivot = array[high];
@@ -36,7 +47,7 @@ int partition(int array[], int low, int high) {
   return (i + 1);
 }
 
-void quickSortInt(int array[], int low, int high) 
+void QSort::quickSortInt(int array[], int low, int high) 
 {
   if (low < high) {
       
@@ -53,7 +64,7 @@ void quickSortInt(int array[], int low, int high)
   }
 }
 
-void quickSort(int* arr, int n)
+void QSort::Sort(int* arr, int n)
 {
 	quickSortInt(arr, 0, n-1);
 }

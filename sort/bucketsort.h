@@ -1,32 +1,26 @@
 ﻿#pragma once
 
+#include "basesort.h"
+
 struct bucket {
    int count; // количество элементов в корзине
    int* data; // массив элементов корзины
 };
 
-int getMax(int* arr, int n) // функция для нахождения максимального элемента массива
-{ 
-    int max = arr[0]; 
-    for (int i = 1; i < n; i++) 
-        if (arr[i] > max) 
-            max = arr[i]; 
-    return max; 
-}
+class BucketSort : public BaseSort
+{
+	private:
+	   const std::string name = "Bucket Sorting Algorithm";
+       void countSort(int *arr, int n);
+	public:
+	   void Sort(int* arr, int n);
+	   std::string getNameSortingAlgorithm()
+	   {
+		   return name;
+	   }	
+};
 
-int getExp(int value) {
-    int exp = 1;
-
-    while( value > 10)
-    {
-        value /= 10;
-        exp *= 10;
-    }
-
-    return exp;
-}
-
-void countSort(int *arr, int n)
+void BucketSort::countSort(int *arr, int n)
 {
     if (!n)
         return;
@@ -55,7 +49,7 @@ void countSort(int *arr, int n)
     delete[] count;
 }
 
-void bucketSort(int* arr, int n)
+void BucketSort::Sort(int* arr, int n)
 {
     struct bucket buckets[10];
     // вычисляем значение экспоненты
