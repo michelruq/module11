@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <string>
 
 class BaseSort
@@ -37,7 +37,7 @@ int BaseSort::getExp(int value)
     return exp;
 }
 
-void BaseSort::swap(int *a, int *b) // функция для смены местами двух значений
+void BaseSort::swap(int *a, int *b) // С„СѓРЅРєС†РёСЏ РґР»СЏ СЃРјРµРЅС‹ РјРµСЃС‚Р°РјРё РґРІСѓС… Р·РЅР°С‡РµРЅРёР№
 {
    int temp = *a;
    *a = *b;

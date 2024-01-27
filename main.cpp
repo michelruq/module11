@@ -48,7 +48,6 @@ int main(int argc, char* argv[])
 {
 	std::string filenameInput = "C://education/module11/files/unsorteddata.txt";
 	const int size = (argc==2)?static_cast<int>(std::atof(argv[1])):static_cast<int>(5000);
-	std::cout << size << std::endl;
     int* rand_arr = new int[size];
 	
 	srand(time(nullptr)); 
