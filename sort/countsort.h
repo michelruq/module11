@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 int getMax (int* arr, int n )
 {

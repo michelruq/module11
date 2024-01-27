@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 
 void insertionSort(int* arr, int n) 
 { 
@@ -6,7 +6,7 @@ void insertionSort(int* arr, int n)
        int key = arr[i]; 
        int j = i - 1; 
        
-       // Сдвигаем элементы arr[0..i-1], которые больше чем key, на одну позицию вперед
+       // вЂ”РґРІРёРіР°РµРј СЌР»РµРјРµРЅС‚С‹ arr[0..i-1], РєРѕС‚РѕСЂС‹Рµ Р±РѕР»СЊС€Рµ С‡РµРј key, РЅР° РѕРґРЅСѓ РїРѕР·РёС†РёСЋ РІРїРµСЂРµРґ
        while((key < arr[j]) && (j >= 0))
 	   {
 			arr[j + 1] = arr[j];
